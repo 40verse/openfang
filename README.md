@@ -7,7 +7,7 @@
 
 <p align="center">
   Open-source Agent OS built in Rust. 137K LOC. 14 crates. 1,767+ tests. Zero clippy warnings.<br/>
-  <strong>One binary. Production-grade. Agents that actually work for you.</strong>
+  <strong>One binary. Battle-tested. Agents that actually work for you.</strong>
 </p>
 
 <p align="center">
@@ -19,22 +19,23 @@
 <p align="center">
   <img src="https://img.shields.io/badge/language-Rust-orange?style=flat-square" alt="Rust" />
   <img src="https://img.shields.io/badge/license-MIT-blue?style=flat-square" alt="MIT" />
-  <img src="https://img.shields.io/badge/version-0.1.0-green?style=flat-square" alt="v0.1.0" />
+  <img src="https://img.shields.io/badge/version-0.3.30-green?style=flat-square" alt="v0.3.30" />
   <img src="https://img.shields.io/badge/tests-1,767%2B%20passing-brightgreen?style=flat-square" alt="Tests" />
   <img src="https://img.shields.io/badge/clippy-0%20warnings-brightgreen?style=flat-square" alt="Clippy" />
+  <a href="https://www.buymeacoffee.com/openfang" target="_blank"><img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-FFDD00?style=flat-square&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me A Coffee" /></a>
 </p>
 
 ---
 
-> **v0.1.0 — First Release (February 2026)**
+> **v0.3.30 — Security Hardening Release (March 2026)**
 >
-> OpenFang is feature-complete but this is the first public release. You may encounter instability, rough edges, or breaking changes between minor versions. We ship fast and fix fast. Pin to a specific commit for production use until v1.0. [Report issues here.](https://github.com/RightNow-AI/openfang/issues)
+> OpenFang is feature-complete but still pre-1.0. You may encounter rough edges or breaking changes between minor versions. We ship fast and fix fast. Pin to a specific commit for production use until v1.0. [Report issues here.](https://github.com/RightNow-AI/openfang/issues)
 
 ---
 
 ## What is OpenFang?
 
-OpenFang is a **production-grade Agent Operating System** — not a chatbot framework, not a Python wrapper around an LLM, not a "multi-agent orchestrator." It is a full operating system for autonomous agents, built from scratch in Rust.
+OpenFang is an **open-source Agent Operating System** — not a chatbot framework, not a Python wrapper around an LLM, not a "multi-agent orchestrator." It is a full operating system for autonomous agents, built from scratch in Rust.
 
 Traditional agent frameworks wait for you to type something. OpenFang runs **autonomous agents that work for you** — on schedules, 24/7, building knowledge graphs, monitoring targets, generating leads, managing your social media, and reporting results to your dashboard.
 
@@ -370,7 +371,7 @@ cargo fmt --all -- --check
 
 ## Stability Notice
 
-OpenFang v0.1.0 is the first public release. The architecture is solid, the test suite is comprehensive, and the security model is production-grade. That said:
+OpenFang v0.3.30 is pre-1.0. The architecture is solid, the test suite is comprehensive, and the security model is comprehensive. That said:
 
 - **Breaking changes** may occur between minor versions until v1.0
 - **Some Hands** are more mature than others (Browser and Researcher are the most battle-tested)
@@ -378,6 +379,12 @@ OpenFang v0.1.0 is the first public release. The architecture is solid, the test
 - **Pin to a specific commit** for production deployments until v1.0
 
 We ship fast and fix fast. The goal is a rock-solid v1.0 by mid-2026.
+
+---
+
+## Security
+
+To report a security vulnerability, email **jaber@rightnowai.co**. We take all reports seriously and will respond within 48 hours.
 
 ---
 
@@ -392,11 +399,31 @@ MIT — use it however you want.
 - [Website & Documentation](https://openfang.sh)
 - [Quick Start Guide](https://openfang.sh/docs/getting-started)
 - [GitHub](https://github.com/RightNow-AI/openfang)
+- [Discord](https://discord.gg/sSJqgNnq6X)
 - [Twitter / X](https://x.com/openfangg)
 
 ---
 
+## Built by RightNow
+
 <p align="center">
-  <strong>Built with Rust. Secured with 16 layers. Agents that actually work for you.</strong><br/>
-  <sub>OpenFang is developed by <a href="https://github.com/RightNow-AI">RightNow AI</a></sub>
+  <a href="https://www.rightnowai.co/">
+    <img src="public/assets/rightnow-logo.webp" width="60" alt="RightNow Logo" />
+  </a>
+</p>
+
+<p align="center">
+  OpenFang is built and maintained by <a href="https://x.com/Akashi203"><strong>Jaber</strong></a>, Founder of <a href="https://www.rightnowai.co/"><strong>RightNow</strong></a>.
+</p>
+
+<p align="center">
+  <a href="https://www.rightnowai.co/">Website</a> &bull;
+  <a href="https://x.com/Akashi203">Twitter / X</a> &bull;
+  <a href="https://www.buymeacoffee.com/openfang" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+</p>
+
+---
+
+<p align="center">
+  <strong>Built with Rust. Secured with 16 layers. Agents that actually work for you.</strong>
 </p>

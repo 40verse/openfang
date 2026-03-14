@@ -81,12 +81,15 @@ const WEBCHAT_HTML: &str = concat!(
     include_str!("../static/vendor/github-dark.min.css"),
     "\n</style>\n",
     include_str!("../static/index_body.html"),
-    // Vendor libs: marked + highlight first (used by app.js)
+    // Vendor libs: marked + highlight first (used by app.js), then Chart.js
     "<script>\n",
     include_str!("../static/vendor/marked.min.js"),
     "\n</script>\n",
     "<script>\n",
     include_str!("../static/vendor/highlight.min.js"),
+    "\n</script>\n",
+    "<script>\n",
+    include_str!("../static/vendor/chart.umd.min.js"),
     "\n</script>\n",
     // App code
     "<script>\n",
@@ -123,6 +126,10 @@ const WEBCHAT_HTML: &str = concat!(
     include_str!("../static/js/pages/wizard.js"),
     "\n",
     include_str!("../static/js/pages/approvals.js"),
+    "\n",
+    include_str!("../static/js/pages/comms.js"),
+    "\n",
+    include_str!("../static/js/pages/runtime.js"),
     "\n</script>\n",
     // Alpine.js MUST be last — it processes x-data and fires alpine:init
     "<script>\n",

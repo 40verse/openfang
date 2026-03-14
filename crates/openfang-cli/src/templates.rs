@@ -35,9 +35,16 @@ pub fn discover_template_dirs() -> Vec<PathBuf> {
         }
     }
 
-    // Installed templates
-    if let Some(home) = dirs::home_dir() {
-        let agents = home.join(".openfang").join("agents");
+    // Installed templates (respects OPENFANG_HOME)
+    let of_home = if let Ok(h) = std::env::var("OPENFANG_HOME") {
+        PathBuf::from(h)
+    } else if let Some(home) = dirs::home_dir() {
+        home.join(".openfang")
+    } else {
+        std::env::temp_dir().join(".openfang")
+    };
+    {
+        let agents = of_home.join("agents");
         if agents.is_dir() && !dirs.contains(&agents) {
             dirs.push(agents);
         }
@@ -54,11 +61,12 @@ pub fn discover_template_dirs() -> Vec<PathBuf> {
     dirs
 }
 
-/// Load all templates from discovered directories.
+/// Load all templates from discovered directories, falling back to bundled templates.
 pub fn load_all_templates() -> Vec<AgentTemplate> {
     let mut templates = Vec::new();
     let mut seen_names = std::collections::HashSet::new();
 
+    // First: load from filesystem (user-installed or dev repo)
     for dir in discover_template_dirs() {
         if let Ok(entries) = std::fs::read_dir(&dir) {
             for entry in entries.flatten() {
@@ -83,6 +91,18 @@ pub fn load_all_templates() -> Vec<AgentTemplate> {
                     });
                 }
             }
+        }
+    }
+
+    // Fallback: load bundled templates for any not found on disk
+    for (name, content) in crate::bundled_agents::bundled_agents() {
+        if seen_names.insert(name.to_string()) {
+            let description = extract_description(content);
+            templates.push(AgentTemplate {
+                name: name.to_string(),
+                description,
+                content: content.to_string(),
+            });
         }
     }
 
